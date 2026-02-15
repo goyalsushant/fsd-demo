@@ -50,7 +50,11 @@ const Home = () => {
                                 <span className="line-through">{product.price.mrp.toFixed(2)}</span>
                             </div>
                         </div>
-                        <button className="bg-black text-white px-3 py-1 rounded hover:bg-gray-800" onClick={() => dispatch(setCartItems(product))}>Add To Cart</button>
+                        <button
+                            className="bg-black text-white px-3 py-1 rounded hover:bg-gray-800"
+                            onClick={() => dispatch(setCartItems(product))}>
+                            Add To Cart
+                        </button>
                     </div>
                 ))
             }

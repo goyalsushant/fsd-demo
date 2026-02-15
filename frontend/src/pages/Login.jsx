@@ -39,11 +39,14 @@ const Login = () => {
     }
 
     return (
-        <div className="flex justify-center items-center h-screen bg-gray-100">
-            <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-900 p-8 rounded shadow-md  w-96">
-                <h2 className="text-2xl font-bold mb-6 text-gray-800">Login</h2>
-                <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Email" className="w-full p-2 mb-4 border rounded" required />
-                <input type="password" name="password" value={form.password} onChange={handleChange} placeholder="Password" className="w-full p-2 mb-4 border rounded" required />
+        <div className="flex justify-center items-center bg-gray-100 h-full">
+            <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-900 p-8 rounded shadow-md w-96">
+                <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Login</h2>
+                {error && (
+                    <p className="text-red-500 text-sm mb-4">{error}</p>
+                )}
+                <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Email" className="w-full p-2 mb-4 border rounded dark:bg-gray-700 dark:text-white" required />
+                <input type="password" name="password" value={form.password} onChange={handleChange} placeholder="Password" className="w-full p-2 mb-4 border rounded dark:bg-gray-700 dark:text-white" required />
                 <button type="submit" className="w-full bg-black text-white p-2 rounded hover:bg-gray-800 transition" >Login</button>
 
             </form>

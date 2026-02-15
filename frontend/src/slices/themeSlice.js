@@ -10,6 +10,12 @@ const themeSlice = createSlice({
     reducers: {
         toggleTheme: (state, action) => {
             state.darkMode = !state.darkMode
+            const root = window.document.documentElement;
+            if (state.darkMode) {
+                root.classList.add("dark");
+            } else {
+                root.classList.remove("dark");
+            }
         }
     }
 })
