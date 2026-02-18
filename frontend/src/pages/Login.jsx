@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { useDispatch } from "react-redux"
-import { useNavigate } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { login } from "../slices/authSlice"
 import api from "../api/axios"
 
@@ -48,6 +48,9 @@ const Login = () => {
                 <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="Email" className="w-full p-2 mb-4 border rounded dark:bg-gray-700 dark:text-white" required />
                 <input type="password" name="password" value={form.password} onChange={handleChange} placeholder="Password" className="w-full p-2 mb-4 border rounded dark:bg-gray-700 dark:text-white" required />
                 <button type="submit" className="w-full bg-black text-white p-2 rounded hover:bg-gray-800 transition" >Login</button>
+
+                
+                <p className="mt-5 flex justify-between items-center">Don't have an account? <Link to={'/register'} className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800">SignUp</Link></p>
 
             </form>
         </div>
