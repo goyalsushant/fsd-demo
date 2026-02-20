@@ -4,6 +4,13 @@ import { auth } from "../middlewares/auth.js"
 
 const router = Router()
 
+/**
+ * @swagger
+ * tags:
+ *   name: Review
+ *   description: Review management APIs
+ */
+
 router.post('/', auth, addReview)
 router.get('/', getReviews)
 

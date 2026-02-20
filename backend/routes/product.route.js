@@ -4,6 +4,13 @@ import { auth } from "../middlewares/auth.js"
 
 const router = Router()
 
+/**
+ * @swagger
+ * tags:
+ *   name: Product
+ *   description: Product management APIs
+ */
+
 router.get('/', getAllProducts)
 router.get('/:slug', getProductBySlug)
 router.post('/', auth, createProduct)

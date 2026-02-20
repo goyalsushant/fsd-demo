@@ -6,7 +6,7 @@ export const addToCart = async (req, res) => {
         product_info: req.body.products.map((item) => {
             return {
                 product: item.id,
-                qunatity: item.quantity
+                quantity: item.quantity
             }
         })
     })
@@ -16,7 +16,7 @@ export const addToCart = async (req, res) => {
 }
 
 export const getCartItems = async (req, res) => {
-    const cart = await Cart.find({ user_id: req.user.id }).populate('products')
+    const cart = await Cart.find({ user_id: req.user.id }).populate('product_info.product')
     res.json(cart)
 }
 
@@ -25,5 +25,5 @@ export const removeCart = async (req, res) => {
     await Cart.findByIdAndDelete(cart._id)
 
     res.status(204)
-    res.json({})
+    res.send()
 }
