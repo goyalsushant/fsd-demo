@@ -11,8 +11,11 @@ export const createOrder = async (req, res) => {
 }
 
 export const getUserOrders = async (req, res) => {
-    const orders = await Orders.find({ user_id: req.user._id })
-        .populate('products')
+    const orders = await Order.find({ user_id: req.user._id })
+        .populate({
+            path: 'products.product',
+            model: 'Product'
+        })
     res.json(orders)
 }
 

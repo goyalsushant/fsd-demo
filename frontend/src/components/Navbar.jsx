@@ -15,7 +15,7 @@ const Navbar = () => {
             <Link to={'/'} className="text-xl font-bold text-gray-800 dark:text-white">E-Comm Store</Link>
             <div className="flex items-center gap-6">
                 <Link to={'/'} className="relative text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">Home</Link>
-                <Link to={'/cart'} className="relative text-gray-600 dark:text-gray-300">
+                <Link to={'/cart'} className="relative text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white">
                     Cart
                     {cartItems.length > 0 && (
                         <span className="absolute -top-2 -right-3 bg-black text-white text-xs px-2 py-0.5 rounded-full">
@@ -24,6 +24,7 @@ const Navbar = () => {
                     )}
 
                 </Link>
+                <Link to={'/orders'}>Orders</Link>
                 {
                     user && user.role === 'admin' && (
                         <Link to={'/dashboard'}>Dashboard</Link>
