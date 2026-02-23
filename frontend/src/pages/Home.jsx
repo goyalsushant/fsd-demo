@@ -36,7 +36,7 @@ const Home = () => {
     }
 
     return (
-        <div className="grid grid-cols-1">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {
                 products && products.map((product) => (
                     <div className="bg-white p-4 rounded shadow-md flex flex-col" key={product._id}>

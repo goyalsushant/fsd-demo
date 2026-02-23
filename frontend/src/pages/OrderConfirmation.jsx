@@ -16,28 +16,28 @@ const OrderConfirmation = () => {
         <div className="max-w-4xl mx-auto p-6">
             <h2 className="text-2xl font-bold mb-6 text-gray-800 dark:text-white">Order Confirmed</h2>
 
-            <p>Thank you for shopping with us.</p>
-            <p> Your Order ID is: {orderId}</p>
+            <p className="mb-4">Thank you for shopping with us.</p>
+            <p className="mb-4"> Your Order ID is: {orderId}</p>
 
-            <h3>Order Details</h3>
-            <div>
+            <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-white">Order Details</h3>
+            <div className="bg-white dark:bg-gray-900 p-4 rounded shadow-md flex flex-col gap-2">
                 {
                     orderDetails.products.map(product => (
-                        <div key={product._id}>
-                            <span>{product.title}</span>
-                            <span>{product.quantity}</span>
+                        <div key={product._id} className="flex justify-between">
+                            <span>{product.product.title} X {product.quantity}</span>
+                            <span></span>
 
                             <span>${(product.product.price.discountedPrice * product.quantity).toFixed(2)}</span>
                         </div>
                     ))
                 }
 
-                <div>
+                <div className="flex justify-between mt-2 font-bold">
                     <span>Total:</span>
                     <span>{subTotal.toFixed(2)}</span>
                 </div>
             </div>
-            <Link to={'/orders'}>View All Orders</Link>
+            <Link to={'/orders'} className="mt-6 inline-block bg-black text-white px-4 py-2 rounded hover:bg-gray-800">View All Orders</Link>
         </div>
     )
 }

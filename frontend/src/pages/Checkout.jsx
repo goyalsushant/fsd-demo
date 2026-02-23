@@ -60,27 +60,32 @@ const Checkout = () => {
             {error &&
                 <p className="text-red-500 mb-4">{error}</p>}
 
-            <div>
-                <h3>Order Summary</h3>
-                <div>
+            <div className="bg-white dark:bg-gray-900 p-6 rounded shadow-md flex flex-col gap-4">
+                <h3 className="text-xl font-bold text-gray-800 dark:text-white">Order Summary</h3>
+                <div className="flex justify-between">
                     <span>Subtotal</span>
                     <span>${subTotal.toFixed(2)}</span>
                 </div>
-                <div>
+                <div className="flex justify-between">
                     <span>Shipping:</span>
                     <span>$0.00</span>
                 </div>
-                <div>
+                <div className="flex justify-between text-lg font-bold">
                     <span>Total</span>
                     <span>${subTotal.toFixed(2)}</span>
                 </div>
 
-                <button onClick={handleCheckout}>{loading ? 'Processing Order' : 'Place Order'}</button>
+                <button
+                    onClick={handleCheckout}
+                    className="bg-black text-white px-4 py-2 rounded hover:bg-gray-800 mt-4"
+                >
+                    {loading ? 'Processing Order' : 'Place Order'}
+                </button>
             </div>
 
-            <div>
-                <h3>Shipping Info</h3>
-                <p>User: {user.email}</p>
+            <div className="mt-6">
+                <h3 className="text-xl font-bold mb-2 text-gray-800 dark:text-white">Shipping Info</h3>
+                <p className="text-gray-500 dark:text-gray-300">User: {user.email}</p>
             </div>
         </div>
     )

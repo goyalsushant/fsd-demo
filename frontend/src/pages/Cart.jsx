@@ -36,11 +36,11 @@ const Cart = () => {
     return (
         <div className="max-w-6xl mx-auto p-6">
             <h2 className="text-3xl font-bold mb-6 text-gray-800 dark:text-white">Shopping Cart</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 gap-6">
                 <div className="md:col-span-2 flex flex-col gap-4">
                     {cartItems.length && cartItems.map(item => (
                         <div key={item._id} className="flex gap-4 bg-white dark:bg-gray-900 p-4 rounded shadow-md items-center">
-                            <img src={item.images[0]} alt={item.title} className="w-24 h-24 object-cover rounded" />
+                            <img src={item.images[0] ?? 'https://placehold.co/100x100'} alt={item.title} className="w-24 h-24 object-cover rounded" />
                             <div className="flex-1 flex flex-col">
                                 <Link to={'/'} className="font-bold text-gray-800 dark:text-white hover:underline">{item.title}</Link>
                                 <p className="text-gray-500 dark:text-gray-300">{item.category}</p>
